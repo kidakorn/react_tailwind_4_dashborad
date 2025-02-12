@@ -73,7 +73,7 @@ export default function Navbar() {
                       <Link
                         key={item.name}
                         to={item.href}
-                        className="block w-full px-4 py-2 text-lg font-normal text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                        className="block w-full px-4 py-2 text-lg font-normal text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                       >
                         {item.name}
                       </Link>
@@ -109,7 +109,7 @@ export default function Navbar() {
                       <Link
                         key={item.name}
                         to={item.href}
-                        className="block w-full px-4 py-2 text-lg font-normal text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                        className="block w-full px-4 py-2 text-lg font-normal text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                       >
                         {item.name}
                       </Link>
