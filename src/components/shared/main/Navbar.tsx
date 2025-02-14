@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link, useLocation } from "react-router";
 
 export default function Navbar() {
@@ -11,6 +11,16 @@ export default function Navbar() {
 
   //Crate variable for react-router
   const location = useLocation();
+
+  // Refs for click outside detection
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const productDropdownRef = useRef<HTMLElement>(null);
+  const featureDropdownRef = useRef<HTMLElement>(null);
+
+  // add ref with mobile menu button
+  const menuButtonRef = useRef<HTMLElement>(null);
+
+  
 
   //Function ON/OFF handleMenuclick
   const handleMenuClick = () => {
@@ -66,7 +76,11 @@ export default function Navbar() {
               {/* product Dropdown */}
               <li className="relative mr-3">
                 <button
-                  className="inline-flex items-center px-4 py-2 text-lg font-normal no-underline rounded-md 
+                onClick={() => {
+                  setProductDropdown(!productDropdown)
+                  setFeatureDropdown(false)
+                }}
+                className="inline-flex items-center px-4 py-2 text-lg font-normal no-underline rounded-md 
 							hover:text-indigo-500 dark:text-gray-300 dark:hover:text-indigo-400 focus:text-indigo-500
 							focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-hidden"
                 >
@@ -106,7 +120,11 @@ export default function Navbar() {
               {/* feature Dropdown */}
               <li className="relative mr-3">
                 <button
-                  className="inline-flex items-center px-4 py-2 text-lg font-normal no-underline rounded-md 
+                onClick={() => {
+                  setFeatureDropdown(!featureDropdown)
+                  setProductDropdown(false)
+                }}
+                className="inline-flex items-center px-4 py-2 text-lg font-normal no-underline rounded-md 
 							hover:text-indigo-500 dark:text-gray-300 dark:hover:text-indigo-400 focus:text-indigo-500
 							focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-hidden"
                 >
