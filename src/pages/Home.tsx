@@ -5,9 +5,15 @@ import Faq from "@/components/home/Faq";
 import Hero from "@/components/home/Hero";
 import Testimonials from "@/components/home/Testimonials";
 import Video from "@/components/home/Video";
-import SectionTitle from "@/components/shared/main/SectionTitle";
+import { SectionTitle } from "@/components/shared/main/SectionTitle";
+import { useEffect } from "react";
 
 export default function Home() {
+
+  useEffect(() => {
+    document.title = "Home WindRact";
+  }, []);
+
   return (
     <div className="max-w-screen-xl mx-auto">
       {/* hero */}
@@ -17,7 +23,7 @@ export default function Home() {
       <SectionTitle
         preTitle="WindRact"
         title="Modern Web Design for startups"
-        aling="center"
+        align="center"
       >
         WindReact is a modern web design & marketing website for startups and
         indie projects. Its built with React & Tailwind CSS 4.0

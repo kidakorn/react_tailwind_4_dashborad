@@ -3,13 +3,13 @@ import { Container } from "@/components/shared/main/Container"
 interface SectionTitleProps {
 	preTitle?: string
 	title: string
-	aling?: 'left' | 'center'
+	align?: 'left' | 'center'
 	children?: React.ReactNode
 }
 
-export default function SectionTitle(props: Readonly<SectionTitleProps>) {
+export function SectionTitle(props: Readonly<SectionTitleProps>) {
   return (
-	<Container className={`flex w-full flex-col mt-4 ${props.aling === "left" ? "" : "items-center justify-center text-center"}`}>
+	<Container className={`flex w-full flex-col mt-4 ${props.align === "left" ? "" : "items-center justify-center text-center"}`}>
 
 		{props.preTitle && (
 			<div className="text-sm font-bold tracking-wider text-indigo-600 uppercase">
