@@ -1,6 +1,24 @@
-import { Link } from "react-router";
+import { useState } from "react";
+import { Link, useLocation } from "react-router";
 
 export default function Navbar() {
+  // crate STATE ON MENU
+  const  [isOpen, setIsOpen] = useState(false);
+
+  // STATE ON/OFF Product and Feature Menu
+  const [productDropdown, setProductDropdown] = useState(false);
+  const [featureDropdown, setFeatureDropdown] = useState(false);
+
+  //Crate variable for react-router
+  const location = useLocation();
+
+  //Function ON/OFF handleMenuclick
+  const handleMenuClick = () => {
+    setIsOpen(false);
+    setProductDropdown(false);
+    setFeatureDropdown(false);
+  };
+
   // main menu
   const navigation = [
     { name: "Company", path: "/company" },
@@ -67,6 +85,7 @@ export default function Navbar() {
                   </svg>
                 </button>
 
+                { productDropdown && (
                 <div className="absolute left-0 w-48 mt-4 bg-white dark:bg-gray-800 rounded-md shadow-lg">
                   <div className="py-1">
                     {productMenus.map((item) => (
@@ -80,7 +99,10 @@ export default function Navbar() {
                     ))}
                   </div>
                 </div>
+                )}
+
               </li>
+
               {/* feature Dropdown */}
               <li className="relative mr-3">
                 <button
@@ -103,6 +125,7 @@ export default function Navbar() {
                   </svg>
                 </button>
 
+                { featureDropdown && (
                 <div className="absolute left-0 w-48 mt-4 bg-white dark:bg-gray-800 rounded-md shadow-lg">
                   <div className="py-1">
                     {featureMenus.map((item) => (
@@ -116,6 +139,8 @@ export default function Navbar() {
                     ))}
                   </div>
                 </div>
+                )}
+                
               </li>
               {/* other menu */}
               {navigation.map((item) => (
