@@ -1,4 +1,5 @@
 import { Container } from "@/components/shared/main/Container"
+import DarkSwitch from "@/components/shared/main/DarkSwitch"
 import { SectionTitle } from "@/components/shared/main/SectionTitle"
 import { useEffect } from "react"
 import { Link } from "react-router"
@@ -74,7 +75,7 @@ export default function Forgotpassword() {
           
           {/* Dark Mode Switch */}
           <div className="flex justify-center">
-            xxx
+            <DarkSwitch/>
           </div>
         </div>
       </Container>
