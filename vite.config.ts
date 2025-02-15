@@ -8,4 +8,19 @@ export default defineConfig({
   resolve: {
     alias: [{ find: "@", replacement: "/src"}],
   },
+  base: "/",
+  build: {
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      input: {
+        main: "/index.html",
+      },
+      output: {
+        manualChunks: {
+          'vendor' : ['react', 'react-dom', 'react-router'],
+          'charts' : ['recharts']
+        }
+      }
+    }
+  }
 })
