@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router";
+import DarkSwitch from "./DarkSwitch";
 
 export default function Navbar() {
   // crate STATE ON MENU
@@ -120,7 +121,7 @@ export default function Navbar() {
 
           {/* get started and dark mode */}
           <div className="flex items-center gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
-            <div>xxx</div>
+            <div><DarkSwitch/></div>
             <div className="hidden mr-3 lg:flex nav__item">
               <Link
                 to="/login"
